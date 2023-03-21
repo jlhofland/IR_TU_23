@@ -1,0 +1,14 @@
+{
+    "name": "IR",
+    "image": "python:3.8",
+    "customizations": {
+      "vscode": {
+        "extensions": [
+          "vscjava.vscode-java-pack",
+          "rioj7.command-variable"
+        ]
+      }
+    },
+    "workspaceMount": "source=${localWorkspaceFolder},target=/home/str/information_retrieval,type=bind",
+    "workspaceFolder": "/home/str/information_retrieval"
+  }  
