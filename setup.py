@@ -17,7 +17,7 @@ reqs = [
     "flatten_dict>=0.3.0",
     "tensorboardX>=2.1.0",
     "gcsfs==0.6.2",
-    "google-auth==1.27.1"
+    "google-auth==2.15.0"
 ]
 
 setup(
