@@ -14,12 +14,12 @@
       "dropout": 0.1
     },
     "post_model": {
-      "output_activation": null,
+      "output_activation": "Tanh",
       "d_output": 1
     }
   },
   "data": {
-    "path": "/home/enrique/IR/information_retrieval/data/web10k",
+    "path": "/home/enrique/IR/information_retrieval/data/mq2008",
     "validation_ds_role": "test",
     "num_workers": 1,
     "batch_size": 64,
@@ -55,9 +55,12 @@
     "mrr_60"
   ],
   "loss": {
-    "name": "approxNDCGLoss",
+    "name": "lambdaLoss",
     "args": {
-      "alpha": 1.0
+      "weighing_scheme": "lambdaRank_scheme",
+      "k": null,
+      "mu": 10,
+      "sigma": 1.0
     }
   },
   "detect_anomaly": false,
