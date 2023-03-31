@@ -14,7 +14,7 @@
       "dropout": 0.1
     },
     "post_model": {
-      "output_activation": "Tanh",
+      "output_activation": null,
       "d_output": 1
     }
   },
@@ -55,13 +55,21 @@
     "mrr_60"
   ],
   "loss": {
-    "name": "rankNet",
-    "args": {}
+    "name": "approxNDCGLoss",
+    "args": {
+      "alpha": 1.0
+    }
   },
   "detect_anomaly": false,
   "expected_metrics" : {
     "val": {
-      "ndcg_5": 0.5
+      "ndcg_5": 0.3
+    }
+  },
+  "click_model": {
+    "name": "allrank.click_models.base.RandomClickModel",
+    "args": {
+      "n_clicks": 5
     }
   }
 }
