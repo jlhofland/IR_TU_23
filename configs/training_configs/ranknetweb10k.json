@@ -63,5 +63,11 @@
     "val": {
       "ndcg_5": 0.5
     }
+  },
+  "click_model": {
+    "name": "allrank.click_models.base.OnlyRelevantClickModel",
+    "args": {
+      "relevancy_threshold": 0.5
+    }
   }
 }
