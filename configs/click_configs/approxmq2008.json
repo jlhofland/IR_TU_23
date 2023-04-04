@@ -19,7 +19,7 @@
     }
   },
   "data": {
-    "path": "/content/drive/MyDrive/info-retriev/mq2008",
+    "path": "/content/gdrive/MyDrive/info-retriev/mq2008",
     "validation_ds_role": "test",
     "num_workers": 1,
     "batch_size": 64,
@@ -67,9 +67,9 @@
     }
   },
   "click_model": {
-    "name": "allrank.click_models.base.RandomClickModel",
+    "name": "allrank.click_models.base.OnlyRelevantClickModel",
     "args": {
-      "n_clicks": 5
+      "relevancy_threshold": 0.5
     }
   }
 }
