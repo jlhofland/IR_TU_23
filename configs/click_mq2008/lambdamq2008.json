@@ -14,12 +14,12 @@
       "dropout": 0.1
     },
     "post_model": {
-      "output_activation": null,
+      "output_activation": "Tanh",
       "d_output": 1
     }
   },
   "data": {
-    "path": "/content/gdrive/MyDrive/info-retriev/mq2008",
+    "path": "/content/gdrive/MyDrive/info-retriev/training-results/results/lambdamq2008",
     "validation_ds_role": "test",
     "num_workers": 1,
     "batch_size": 64,
@@ -55,15 +55,18 @@
     "mrr_60"
   ],
   "loss": {
-    "name": "approxNDCGLoss",
+    "name": "lambdaLoss",
     "args": {
-      "alpha": 1.0
+      "weighing_scheme": "lambdaRank_scheme",
+      "k": null,
+      "mu": 10,
+      "sigma": 1.0
     }
   },
   "detect_anomaly": false,
   "expected_metrics" : {
     "val": {
-      "ndcg_5": 0.3
+      "ndcg_5": 0.5
     }
   },
   "click_model": {
