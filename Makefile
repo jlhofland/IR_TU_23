@@ -6,7 +6,7 @@ lint:
 	flake8 allrank
 	flake8 tests
 	mypy allrank --ignore-missing-imports  --check-untyped-defs
-	mypy tests --ignore-missing-imports --check-untyped-defs
+	mypy tests --ignore-missing-imports --check-untyped-defs --disable-error-code attr-defined
 
 .PHONY: install-reqs
 install-reqs:

@@ -19,7 +19,7 @@
     }
   },
   "data": {
-    "path": "/home/enrique/IR/information_retrieval/data/web10k",
+    "path": "/content/gdrive/MyDrive/info-retriev/training-results/results/neuralweb10k",
     "validation_ds_role": "test",
     "num_workers": 1,
     "batch_size": 64,
@@ -55,15 +55,24 @@
     "mrr_60"
   ],
   "loss": {
-    "name": "pointwise_rmse",
+    "name": "neuralNDCG",
     "args": {
-      "no_of_levels": 3
+      "temperature": 1.0,
+      "k": null,
+      "powered_relevancies": true,
+      "stochastic": false
     }
   },
   "detect_anomaly": false,
   "expected_metrics" : {
     "val": {
       "ndcg_5": 0.5
+    }
+  },
+  "click_model": {
+    "name": "allrank.click_models.base.OnlyRelevantClickModel",
+    "args": {
+      "relevancy_threshold": 0.5
     }
   }
 }

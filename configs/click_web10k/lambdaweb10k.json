@@ -19,7 +19,7 @@
     }
   },
   "data": {
-    "path": "/home/enrique/IR/information_retrieval/data/mq2008",
+    "path": "/content/gdrive/MyDrive/info-retriev/training-results/results/lambdaweb10k",
     "validation_ds_role": "test",
     "num_workers": 1,
     "batch_size": 64,
@@ -55,15 +55,24 @@
     "mrr_60"
   ],
   "loss": {
-    "name": "pointwise_rmse",
+    "name": "lambdaLoss",
     "args": {
-      "no_of_levels": 2
+      "weighing_scheme": "lambdaRank_scheme",
+      "k": null,
+      "mu": 10,
+      "sigma": 1.0
     }
   },
   "detect_anomaly": false,
   "expected_metrics" : {
     "val": {
       "ndcg_5": 0.5
+    }
+  },
+  "click_model": {
+    "name": "allrank.click_models.base.OnlyRelevantClickModel",
+    "args": {
+      "relevancy_threshold": 0.5
     }
   }
 }

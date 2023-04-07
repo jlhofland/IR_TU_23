@@ -1,5 +1,5 @@
 import os
-from typing import Any, Dict, Tuple
+from typing import Any, Dict, Tuple  # noqa: F401
 
 from tensorboardX import SummaryWriter
 

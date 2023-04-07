@@ -14,12 +14,12 @@
       "dropout": 0.1
     },
     "post_model": {
-      "output_activation": "Tanh",
+      "output_activation": null,
       "d_output": 1
     }
   },
   "data": {
-    "path": "/content/information_retrieval/data/web10k",
+    "path": "/content/gdrive/MyDrive/info-retriev/mq2008",
     "validation_ds_role": "test",
     "num_workers": 1,
     "batch_size": 64,
@@ -48,7 +48,11 @@
     "ndcg_5",
     "ndcg_10",
     "ndcg_30",
-    "ndcg_60"
+    "ndcg_60",
+    "mrr_5",
+    "mrr_10",
+    "mrr_30",
+    "mrr_60"
   ],
   "loss": {
     "name": "neuralNDCG",
@@ -63,6 +67,12 @@
   "expected_metrics" : {
     "val": {
       "ndcg_5": 0.5
+    }
+  },
+  "click_model": {
+    "name": "allrank.click_models.base.OnlyRelevantClickModel",
+    "args": {
+      "relevancy_threshold": 0.5
     }
   }
 }

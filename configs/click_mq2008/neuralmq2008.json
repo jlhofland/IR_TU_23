@@ -14,12 +14,12 @@
       "dropout": 0.1
     },
     "post_model": {
-      "output_activation": "Tanh",
+      "output_activation": null,
       "d_output": 1
     }
   },
   "data": {
-    "path": "/home/enrique/IR/information_retrieval/data/web10k",
+    "path": "/content/gdrive/MyDrive/info-retriev/training-results/results/neuralmq2008",
     "validation_ds_role": "test",
     "num_workers": 1,
     "batch_size": 64,
@@ -55,18 +55,24 @@
     "mrr_60"
   ],
   "loss": {
-    "name": "lambdaLoss",
+    "name": "neuralNDCG",
     "args": {
-      "weighing_scheme": "lambdaRank_scheme",
+      "temperature": 1.0,
       "k": null,
-      "mu": 10,
-      "sigma": 1.0
+      "powered_relevancies": true,
+      "stochastic": false
     }
   },
   "detect_anomaly": false,
   "expected_metrics" : {
     "val": {
       "ndcg_5": 0.5
+    }
+  },
+  "click_model": {
+    "name": "allrank.click_models.base.OnlyRelevantClickModel",
+    "args": {
+      "relevancy_threshold": 0.5
     }
   }
 }
