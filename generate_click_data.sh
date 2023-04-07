@@ -1,7 +1,7 @@
 #!/bin/bash
-JOBDIR="/content/gdrive/MyDrive/info-retriev/training-results"
-CONFIGS_DIR="/content/information_retrieval/configs/click_configs"
-INPUT_DIR="/content/gdrive/MyDrive/info-retriev/training-results/results"
+JOBDIR="./click-data"
+CONFIGS_DIR="./configs/training_configs"
+INPUT_DIR="./training/results"
 
 for i in $(ls $CONFIGS_DIR | grep .json); do
     ID="${i%.*}"
