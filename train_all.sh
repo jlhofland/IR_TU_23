@@ -1,6 +1,6 @@
 #!/bin/bash
-JOBDIR="./base_trains"
-CONFIGS_DIR="./configs/base_trains"
+JOBDIR="./training"
+CONFIGS_DIR="./configs/training_configs"
 
 for i in $(ls $CONFIGS_DIR | grep .json); do
     CONFIG_FILE="$CONFIGS_DIR/$i"
